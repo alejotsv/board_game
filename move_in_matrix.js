@@ -1,2 +1,17 @@
 // Game to allow a player to move in a matrix
-// To generate game a
+
+// Define board constant
+const board = [];
+
+// Create function to create board
+function populateBoard(arr){
+
+  for(let i=0; i<3; i++){
+    arr[i] = 0;
+  }
+
+
+  console.log(arr);
+}
+
+populateBoard(board);
