@@ -4,14 +4,23 @@
 const board = [];
 
 // Create function to create board
-function populateBoard(arr){
+const board = [];
+
+function populateBoard(matrix){
+  
 
   for(let i=0; i<3; i++){
-    arr[i] = 0;
+    let tempArr = [];
+    
+    for(let j=0; j<3; j++){      
+      tempArr[j] = { x: i, y: j};      
+    }    
+    matrix[i] = tempArr;    
   }
+    
+  return matrix;
 
-
-  console.log(arr);
 }
 
 populateBoard(board);
+
