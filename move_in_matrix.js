@@ -114,3 +114,10 @@ moveLeft(playerOne,board,3);
 moveDown(playerOne,board,3);
 moveDown(playerOne,board,3);
 moveDown(playerOne,board,3);
+
+/* TODO: create game based on existing functions
+1. prompts for username, board dimensions, and movements
+2. create array to store all movements (only valid?)
+3. instruction to exit
+4. instruction to show current position
+*/
