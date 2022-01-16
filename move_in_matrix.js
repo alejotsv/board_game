@@ -38,4 +38,12 @@ function createPlayer() {
 
 let playerOne = createPlayer();
 
+/*
+TODO: create game
+1. function to move horizontally
+2. function to move vertically
+3. function to update grid
+*/
+
+
 
