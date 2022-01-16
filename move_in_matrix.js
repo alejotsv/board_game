@@ -6,14 +6,16 @@ const board = [];
 // Create function to populate board with coordinates
 function populateBoard(matrix){
   
+  let line = 0;
 
-  for(let i=0; i<3; i++){
+  for(let i=2; i>=0; i--){
     let tempArr = [];
     
-    for(let j=0; j<3; j++){      
-      tempArr[j] = { x: i, y: j};      
+    for(let j=2; j>=0; j--){      
+      tempArr[j] = { x: j, y: i};      
     }    
-    matrix[i] = tempArr;    
+    matrix[line] = tempArr;
+    line++;
   }
     
   return matrix;
@@ -40,8 +42,6 @@ let playerOne = createPlayer();
 
 /*
 TODO: create game
-1. functions to move horizontally
-2. functions to move vertically
 3. function to update grid
 */
 
