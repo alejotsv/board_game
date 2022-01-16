@@ -4,32 +4,33 @@
 const board = [];
 
 // Create function to populate board with coordinates
-function populateBoard(matrix){
+function populateBoard(matrix,dimension){
   
   let line = 0;
 
-  for(let i=2; i>=0; i--){
+  for(let i=dimension; i>=0; i--){
     let tempArr = [];
     
-    for(let j=2; j>=0; j--){      
+    for(let j=dimension; j>=0; j--){      
       tempArr[j] = { x: j, y: i};      
     }    
     matrix[line] = tempArr;
     line++;
   }
-    
+  
+  console.log(matrix);
   return matrix;
 
 }
 
-populateBoard(board);
+populateBoard(board,3);
 
 // Create function to create player
 function createPlayer() {
   let player = {
     name: '',
-    x: 1,
-    y: 1
+    x: 0,
+    y: 0
   }
   
   player.name = prompt("What is your name?");
@@ -40,28 +41,38 @@ function createPlayer() {
 
 let playerOne = createPlayer();
 
-/*
-TODO: create game
-3. function to update grid
-*/
-
-function moveRight(player) {
+function moveRight(player,board) {  
   player.x++;
+  console.log("You moved right. You are now located at:")
+  console.log("X: " + player.x);
+  console.log("Y: " + player.y);
   return player;
 }
 
-function moveLeft(player) {
-  player.x--
+function moveLeft(player,board) {
+  player.x--;
+  console.log("You moved left. You are now located at:")
+  console.log("X: " + player.x);
+  console.log("Y: " + player.y);
   return player;
 }
 
-function moveUp(player){
-  player.y--;
-  return player;
-}
-
-function moveDown(player){
+function moveUp(player,board){
   player.y++;
+  console.log("You moved up. You are now located at:")
+  console.log("X: " + player.x);
+  console.log("Y: " + player.y);
   return player;
 }
 
+function moveDown(player,board){
+  player.y--;
+  console.log("You moved down. You are now located at:")
+  console.log("X: " + player.x);
+  console.log("Y: " + player.y);
+  return player;
+}
+
+console.log(playerOne);
+
+moveDown(playerOne,board);
