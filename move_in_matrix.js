@@ -1,11 +1,9 @@
 // Game to allow a player to move in a matrix
 
-// Define board constant
+// Define board as a constant
 const board = [];
 
-// Create function to create board
-const board = [];
-
+// Create function to populate board with coordinates
 function populateBoard(matrix){
   
 
@@ -23,4 +21,21 @@ function populateBoard(matrix){
 }
 
 populateBoard(board);
+
+// Create function to create player
+function createPlayer() {
+  let player = {
+    name: '',
+    x: 1,
+    y: 1
+  }
+  
+  player.name = prompt("What is your name?");
+
+  return player;
+
+} 
+
+let playerOne = createPlayer();
+
 
