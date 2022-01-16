@@ -40,10 +40,28 @@ let playerOne = createPlayer();
 
 /*
 TODO: create game
-1. function to move horizontally
-2. function to move vertically
+1. functions to move horizontally
+2. functions to move vertically
 3. function to update grid
 */
 
+function moveRight(player) {
+  player.x++;
+  return player;
+}
 
+function moveLeft(player) {
+  player.x--
+  return player;
+}
+
+function moveUp(player){
+  player.y--;
+  return player;
+}
+
+function moveDown(player){
+  player.y++;
+  return player;
+}
 
