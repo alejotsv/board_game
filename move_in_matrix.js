@@ -1,11 +1,7 @@
 // Game to allow a player to move in a matrix
 
-// Define board as a constant
-const board = [];
-
 // Create function to populate board with coordinates
-function populateBoard(matrix,dimension){
-  
+function populateBoard(matrix,dimension){  
   let line = 0;
 
   for(let i=dimension-1; i>=0; i--){
@@ -18,6 +14,7 @@ function populateBoard(matrix,dimension){
     line++;
   }
   
+  console.log("This is your board");
   console.log(matrix);
   return matrix;
 
@@ -25,7 +22,7 @@ function populateBoard(matrix,dimension){
 
 // populateBoard(board,3);
 
-// Create function to create player
+// Function to create player
 function createPlayer() {
   let player = {
     name: '',
@@ -103,6 +100,9 @@ function moveDown(player,board,dimension){
 
 
 function playBoardGame(){
+  // Define board as a constant
+  const board = [];  
+
   // Welcome message
   console.log("Welcome to the Board Explorer. First, let's create your player");
 
@@ -110,6 +110,16 @@ function playBoardGame(){
   let player = createPlayer();
 
   console.log("Hello, " + player.name + "!");
+  console.log("Now choose the scale of the board.")
+
+  const dimension = prompt("Type the scale of the board:");
+
+  populateBoard(board,dimension);
+
+  console.log("-----------------------------")
+  console.log("You are located at:")
+  console.log("X: " + player.x);
+  console.log("Y: " + player.y);
 
 
 }
