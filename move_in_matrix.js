@@ -23,7 +23,7 @@ function populateBoard(matrix,dimension){
 
 }
 
-populateBoard(board,3);
+// populateBoard(board,3);
 
 // Create function to create player
 function createPlayer() {
@@ -39,7 +39,7 @@ function createPlayer() {
 
 } 
 
-let playerOne = createPlayer();
+// let playerOne = createPlayer();
 
 function moveRight(player,board,dimension) {
   if(player.x+1 == dimension){
@@ -101,19 +101,20 @@ function moveDown(player,board,dimension){
   }
 }
 
-console.log(playerOne);
-moveRight(playerOne,board,3);
-moveRight(playerOne,board,3);
-moveRight(playerOne,board,3);
-moveUp(playerOne,board,3);
-moveUp(playerOne,board,3);
-moveUp(playerOne,board,3);
-moveLeft(playerOne,board,3);
-moveLeft(playerOne,board,3);
-moveLeft(playerOne,board,3);
-moveDown(playerOne,board,3);
-moveDown(playerOne,board,3);
-moveDown(playerOne,board,3);
+
+function playBoardGame(){
+  // Welcome message
+  console.log("Welcome to the Board Explorer. First, let's create your player");
+
+  // Create player
+  let player = createPlayer();
+
+  console.log("Hello, " + player.name + "!");
+
+
+}
+
+playBoardGame();
 
 /* TODO: create game based on existing functions
 1. prompts for username, board dimensions, and movements
