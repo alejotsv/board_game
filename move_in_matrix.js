@@ -38,7 +38,7 @@ function createPlayer() {
 
 // let playerOne = createPlayer();
 
-function moveRight(player,board,dimension) {
+function moveRight(player,dimension) {
   if(player.x+1 == dimension){
     console.log("You are at the limit. Choose another direction.");
     console.log("You are located at:")
@@ -53,7 +53,7 @@ function moveRight(player,board,dimension) {
   }  
 }
 
-function moveLeft(player,board,dimension) {
+function moveLeft(player,dimension) {
   if(player.x == 0){
     console.log("You are at the limit. Choose another direction.");
     console.log("You are located at:")
@@ -68,7 +68,7 @@ function moveLeft(player,board,dimension) {
   }
 }
 
-function moveUp(player,board,dimension){
+function moveUp(player,dimension){
   if(player.y+1 == dimension){
     console.log("You are at the limit. Choose another direction.");
     console.log("You are located at:")
@@ -83,7 +83,7 @@ function moveUp(player,board,dimension){
   }
 }
 
-function moveDown(player,board,dimension){
+function moveDown(player,dimension){
   if(player.y == 0){
     console.log("You are at the limit. Choose another direction.");
     console.log("You are located at:")
@@ -98,10 +98,73 @@ function moveDown(player,board,dimension){
   }
 }
 
+function makeMove(player,board,dimension,movements,playing){
+  let direction;
+
+  while(playing){
+    direction = prompt("Where do you want to go?");
+
+    switch(direction){
+      case "r":
+      case "R":
+      moveRight(player,dimension);
+      movements.push("R");
+      break;
+
+      case "l":
+      case "L":
+      moveLeft(player,dimension);
+      movements.push("L");
+      break;
+
+      case "u":
+      case "U":
+      moveUp(player,dimension);
+      movements.push("U");
+      break;
+
+      case "d":
+      case "D":
+      moveDown(player,dimension);
+      movements.push("D");
+      break;
+
+      case "b":
+      case "B":
+      console.log(board);
+      break;
+
+      case "p":
+      case "P":
+      console.log("You are located at:")
+      console.log("X: " + player.x);
+      console.log("Y: " + player.y);
+      break;
+
+      case "m":
+      case "M":
+      console.log("Movements tried: " + movements);
+      break;
+
+      case "q":
+      case "Q":
+      console.log("Thank you for playing!");
+      playing = false;
+      break;
+
+      default:
+      console.log("Please use a valid command.");
+    }
+    
+  }
+}
+
 
 function playBoardGame(){
   // Define board as a constant
-  const board = [];  
+  const board = [];
+  let movements = [];
+  let playing = true;
 
   // Welcome message
   console.log("Welcome to the Board Explorer. First, let's create your player");
@@ -120,15 +183,24 @@ function playBoardGame(){
   console.log("You are located at:")
   console.log("X: " + player.x);
   console.log("Y: " + player.y);
+  console.log("Now move around the board. You cannot go out of the board limits.");
+  console.log("You can move right, left, up, and down.");
+  console.log("Use the following commands:");
+  console.log("r = move right");
+  console.log("l = move left");
+  console.log("u = move up");
+  console.log("d = move down");
+  console.log("b = see the board");
+  console.log("p = print current position");
+  console.log("m = see all movements");
+  console.log("q = quit the game");
+  console.log("-----------------------------");
+
+  
+  makeMove(player,board,dimension,movements,playing);
 
 
 }
 
-playBoardGame();
 
-/* TODO: create game based on existing functions
-1. prompts for username, board dimensions, and movements
-2. create array to store all movements (only valid?)
-3. instruction to exit
-4. instruction to show current position
-*/
+playBoardGame();
